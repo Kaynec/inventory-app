@@ -12,7 +12,7 @@ const app = express();
 // Set up mongoose connection
 const mongoose = require("mongoose");
 const dev_db_url =
-  "mongodb+srv://kaynec:Alireza0910@cluster0.a9azn.mongodb.net/inventory?retryWrites=true";
+  "mongodb+srv://Kaynec:Alireza0910@cluster0.y8q5x.mongodb.net/inventory?retryWrites=true&w=majority";
 const mongoDB = process.env.MONGODB_URI || dev_db_url;
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = global.Promise;
