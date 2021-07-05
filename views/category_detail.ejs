@@ -1,0 +1,16 @@
+<%- include('header') -%>
+
+<div id="category-detail">
+
+<h1> <%= category.name %> </h1>
+<h3> <%=  category.description  %> </h3>
+<% results.forEach(el=>{   %>
+    <pre> <% el %>  </pre>
+<% })%>
+
+</div>
+
+<%- include('footer') -%>
+
+
+

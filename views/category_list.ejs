@@ -1,0 +1,25 @@
+<%- include('header') -%>
+<div id='categories'>
+
+<% category_list.map(el=>{ %>
+
+<div class="category">
+    <a href="<%= `${el.url}` %>"> <%= el.name %> </a>
+<p> <%= el.description %> </p>
+</div>
+<% })%>
+</div>
+
+<div class="category-create">
+    <i class="gg-add-r"></i>
+    <h5>Add Category </h5>
+</div>
+
+<script>
+    document.querySelector('.category-create').addEventListener('click' , (e)=> {
+        window.location = "/categories/create";
+    })
+    
+</script>
+
+<%- include('footer') -%>
