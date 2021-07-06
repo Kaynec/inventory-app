@@ -29,10 +29,8 @@ a {
 
 #categories {
   display: flex;
-  flex-wrap: wrap;
   gap: 3rem;
-  flex-basis: 50%;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 .category {
@@ -92,6 +90,12 @@ nav a:hover {
 #category-detail {
  display: grid;
 }
+
+#delete-update > a {
+  margin: 0 1rem;
+  text-decoration: none;
+}
+
 #category-detail h1 {
   grid-column: span 5;
   font-weight: 600;
@@ -105,13 +109,16 @@ nav a:hover {
   padding: 0 1rem ;
   color: rgb(6, 65, 65);
 }
+#category-detail div {
+grid-column:span 5 ;
+}
 .item {
 display: flex;
 flex-direction: column;
 justify-content: center;
 align-items:center ;
-width: 35%;
 margin: 1rem;
+width: 32.5%;
 padding: 1rem;
 border: 5px solid skyblue;
 transition: .4s;
@@ -142,6 +149,10 @@ gap: 1rem;
 margin: 0 auto;
 }
 
+#create-category form  p {
+  color: rgb(6, 70, 70);
+}
+
 #create-category form h1 {
   color: rgb(16, 62, 62);
   text-align: center;
@@ -164,4 +175,35 @@ font-weight: 600;
 
 #create-category form button:hover {
   background: rgba(87, 87, 228, 0.427);
+}
+
+
+.para-error {
+  color: red;
+  font-weight: 500;
+}
+
+
+#items {
+  display: flex;
+  flex-wrap: wrap;
+
+  position: relative;
+}
+
+.item-create {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 3rem;
+  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items:center ;
+  transition: .4s;
+}
+.item-create:hover {
+  background: rgba(221, 221, 221, 0.393);
+  cursor: pointer;
 }

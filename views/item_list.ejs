@@ -1,0 +1,27 @@
+<%- include('header') -%>
+<div id='items'>
+
+<% items.map(el=>{ %>
+
+    <div class="item">
+        <a href="<%= `${el.url}` %>"> <%= el.name %> </a>
+        <p> <%= el.description %> </p>
+        <img src="<%= `${el.image}` %>" alt="">
+       </div>
+    
+<% })%>
+</div>
+
+<div class="item-create">
+    <i class="gg-add-r"></i>
+    <h5>Add item </h5>
+</div>
+
+<script>
+    document.querySelector('.item-create').addEventListener('click' , (e)=> {
+        window.location = "/items/create";
+    })
+    
+</script>
+
+<%- include('footer') -%>

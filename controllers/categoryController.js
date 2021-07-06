@@ -11,6 +11,7 @@ exports.category_list = function (req, res, next) {
     .exec(function (err, categories) {
       if (err) {
         console.error(err);
+        return next(err)
       } else {
         //   Successful, so render
         res.render("category_list", {
@@ -90,6 +91,52 @@ exports.category_create_post = function(req, res , next) {
   }
 }
 
-exports.category_create_delete = function(req , res , next) {
-  
+exports.category_delete_get =async function(req , res , next) {
+  const category = await Category.findById(req.params.id)
+  res.render('category_delete' , {category, title:'delete category' , err:null})
+}
+
+exports.category_delete_post =async function(req , res , next) {
+  if (req.body.password == 11111111) {
+    Category.findByIdAndRemove(req.params.id , (err) =>{
+      if (err) next(err)
+      res.redirect('/categories')
+    })
+   
+  }
+
+  else {
+    const category = await Category.findById(req.params.id)
+    res.render('category_delete' , {category, title:'delete category' , err:"Password is not correct"})
+  }
+}
+
+
+
+exports.category_update_get =async function(req , res , next) {
+  const category = await Category.findById(req.params.id)
+  res.render('category_update' , {category, title:'update category' , err:null})
+}
+
+exports.category_update_post =async function(req , res , next) {
+
+  const newCategory = {
+    name : req.body.name ,
+    description : req.body.description
+  }
+  if (req.body.password == 11111111) {
+
+    Category.findByIdAndUpdate(req.params.id , newCategory, (err) =>{
+      
+      if (err) next(err)
+      res.redirect('/categories')
+    })
+   
+  }
+
+  else {
+    const category = await Category.findById(req.params.id)
+    res.render('category_update' , {category, title:'update category' , err:"Password is not correct"})
+  }
+
 }

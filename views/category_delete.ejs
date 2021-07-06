@@ -1,0 +1,17 @@
+<%- include('header') -%>
+
+<div id="create-category">
+    <form action="" method="POST">
+        <span class="para-error"> <%= err %> </span>
+        <h1> Are You Sure ? </h1>
+        <p> NAME :  <%= category.name %> </p>
+        <p> DESCRIPTION : <%= category.description %> </p>
+
+        <label for="password"> Password </label>
+        <input required name="password"  type="text" id="password">
+
+     <button type="submit"> Delete</button>
+    </form>
+    </div>
+
+<%- include('footer') -%>

@@ -9,7 +9,7 @@ const compression = require('compression')
 
 const app = express();
 
-const categoryRoute = require("./routes/category");
+const catalog = require("./routes/catalog");
 
 // Set up mongoose connection
 const mongoose = require("mongoose");
@@ -35,7 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 //
-app.use(categoryRoute);
+app.use( '/', catalog);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
