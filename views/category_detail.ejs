@@ -2,12 +2,15 @@
 
 <div id="category-detail">
 
-<h1> <%= category.name %> </h1>
-<h3> <%=  category.description  %> </h3>
-<% results.forEach(el=>{   %>
-    <pre> <% el %>  </pre>
+<h1> <%= results[0].name %> </h1>
+<h3> <%= results[0].description %> </h3>
+<% results[1].map((el) =>{ %>
+   <div class="item">
+    <a> <%= el.name %> </a>
+    <p> <%= el.description %> </p>
+    <img src="<%= `${el.image}` %>" alt="">
+   </div>
 <% })%>
-
 </div>
 
 <%- include('footer') -%>

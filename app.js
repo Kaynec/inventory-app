@@ -4,6 +4,9 @@ const path = require("path");
 const cookieParser = require("cookie-parser");
 const logger = require("morgan");
 
+const compression = require('compression')
+
+
 const app = express();
 
 const categoryRoute = require("./routes/category");
@@ -21,6 +24,9 @@ db.on("error", console.error.bind(console, "MongoDB connection error:"));
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
+
+// compress all responses
+app.use(compression())
 
 app.use(logger("dev"));
 app.use(express.json());

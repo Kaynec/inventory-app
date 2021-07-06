@@ -9,7 +9,15 @@ router.get("/", (req, res, next) => {
 });
 
 router.get("/categories", categoryController.category_list);
+// The Get form For a New Category
+router.get("/categories/create", categoryController.category_create_get);
+
+// The Post Form For Creating A Category 
+router.post("/categories/create", categoryController.category_create_post); 
+
 
 router.get("/categories/:id", categoryController.category_detail);
+
+
 
 module.exports = router;

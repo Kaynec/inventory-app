@@ -1,0 +1,18 @@
+<%- include('header') -%>
+<div id="create-category">
+
+<form action="" method="POST">
+
+<p> <%= errors%> </p>
+
+
+    <h1> Create a Category </h1>
+    <label for="name"> Name </label>
+    <input required name="name" type="text" id="name">
+
+    <label for="description"> description </label>
+    <textarea required type="text" name="description" id="description"></textarea>
+<button type="submit"> Submit</button>
+</form>
+</div>
+<%- include('footer') -%>

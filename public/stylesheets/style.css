@@ -72,7 +72,7 @@ nav a:hover {
 }
 
 .category-create {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   padding: 3rem;
@@ -90,5 +90,78 @@ nav a:hover {
 
 
 #category-detail {
- 
+ display: grid;
+}
+#category-detail h1 {
+  grid-column: span 5;
+  font-weight: 600;
+  font-size: 2.5rem;
+  color: rgb(6, 65, 65);
+  padding: 0 1rem;
+}
+#category-detail h3 {
+  grid-column: span 5;
+  font-weight: 500;
+  padding: 0 1rem ;
+  color: rgb(6, 65, 65);
+}
+.item {
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items:center ;
+width: 35%;
+margin: 1rem;
+padding: 1rem;
+border: 5px solid skyblue;
+transition: .4s;
+}
+.item a:hover {
+  transform: scale(1.05);
+  background: snow;
+  cursor: pointer;
+}
+
+.item p {
+  word-wrap: break-word;
+  color: rgb(114, 104, 104);
+}
+.item img {
+  width: 70%;
+}
+
+#create-category form {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  padding: 25px 40px;
+  width: 500px;
+  box-shadow: rgb(0 0 0 / 10%) 0px 4px 12px;
+  background-color: #f6f7fd;
+gap: 1rem;
+margin: 0 auto;
+}
+
+#create-category form h1 {
+  color: rgb(16, 62, 62);
+  text-align: center;
+}
+
+#create-category form label  {
+  color: rgb(8, 60, 55);
+font-weight: 600;
+} 
+
+
+#create-category form button {
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background: rgb(87, 87, 228);
+  padding: .5rem;
+  transition: .4s;
+}
+
+#create-category form button:hover {
+  background: rgba(87, 87, 228, 0.427);
 }
