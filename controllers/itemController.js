@@ -6,6 +6,7 @@ const Item = require('../models/item')
 const { body,validationResult } = require("express-validator");
 
 exports.item_list =  function (req, res, next) {
+
     Item.find()
     .exec(function (err, items) {
       if (err) next(err) 

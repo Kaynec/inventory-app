@@ -96,9 +96,15 @@ exports.category_delete_get =async function(req , res , next) {
   res.render('category_delete' , {category, title:'delete category' , err:null})
 }
 
-exports.category_delete_post =async function(req , res , next) {
+exports.category_delete_post = async function(req , res , next) {
   if (req.body.password == 11111111) {
     Category.findByIdAndRemove(req.params.id , (err) =>{
+       Item.find({
+        category:req.params.id
+      })
+      .remove({},(err,removed)=>{
+        console.log(removed)
+      })
       if (err) next(err)
       res.redirect('/categories')
     })
