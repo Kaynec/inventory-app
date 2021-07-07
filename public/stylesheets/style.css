@@ -1,7 +1,8 @@
 body {
   margin: 0;
   padding: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
 }
 * , *::before , *::after{
   box-sizing: border-box;
@@ -30,7 +31,7 @@ a {
 #categories {
   display: flex;
   gap: 3rem;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 .category {
@@ -61,7 +62,7 @@ nav {
 }
 
 nav a {
-  color: rgb(107, 230, 220) ;
+  color: rgb(0, 0, 0) ;
 text-decoration: none;
 font-size: 1.3rem;
 }
@@ -206,4 +207,115 @@ font-weight: 600;
 .item-create:hover {
   background: rgba(221, 221, 221, 0.393);
   cursor: pointer;
+}
+
+
+
+#item-detail {
+  margin: 0 auto;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#item-detail h1 {
+  font-weight: 700;
+  color: rgb(4, 40, 40);
+}
+#item-detail h3 {
+  width: 30%;
+
+  color: teal;
+}
+
+
+#item-detail img {
+  width: 40%;
+}
+
+#item-detail a {
+  font-size: 1.25rem;
+  transition: .4s;
+}
+
+#item-detail a:hover {
+  color: rgb(34, 255, 0);
+  transform: scale(1.1);
+}
+
+
+
+.item-delete-update {
+  margin: 0 auto;
+  max-width: 1200px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-delete-update img {
+  width: clamp(35% ,60% , 650px);
+}
+
+.item-delete-update h1 {
+  color: rgb(26, 126, 126);
+}
+
+.item-delete-update p {
+  /* width: 50%; */
+
+  color: #545559;
+}
+
+.item-delete-update form {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.item-delete-update form > * {
+width: 50%;
+margin-bottom: .5rem;
+}
+
+.item-delete-update form label {
+  color: #00b7ff;
+  font-weight: 700;
+}
+
+.item-delete-update form button {
+  border: none;
+  background: rgb(87, 87, 228);
+  color: white;
+  border-radius: 10px;
+  transition: .4s;
+  padding: .7rem 0;
+}
+
+.item-delete-update form button:hover {
+  background: rgba(100, 100, 225, 0.688);
+  cursor: pointer;
+}
+
+input:active {
+  outline: turquoise;
+}
+
+input:focus {
+  outline: turquoise;
+}
+
+textarea:active {
+  outline: turquoise;
+}
+
+textarea:focus {
+  outline: turquoise;
+}
+
+.item-delete-update  textarea {
+  resize: vertical;
 }

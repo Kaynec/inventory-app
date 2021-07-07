@@ -1,0 +1,24 @@
+<%- include('header') -%>
+
+<div id="item-update" class="item-delete-update">
+
+    <form action="" method="POST">
+        <span class="para-error"> <%= err %> </span>
+        <h1> Updating Item </h1>
+        <label for="name"> Name </label>
+        <input required name="name" value="<%= item.name%>" type="text" id="name">
+    
+        <label for="description"> description </label>
+        <textarea required type="text"  rows="10" name="description" id="description"> <%= item.description %> </textarea>
+
+        <label for="image"> image url </label>
+        <input value="<%= item.image%>" name="image">
+
+        <label for="password"> Password </label>
+        <input required name="password"  type="text" id="password">
+
+     <button type="submit"> Update</button>
+    </form>
+    </div>
+
+<%- include('footer') -%>

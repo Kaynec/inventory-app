@@ -1,0 +1,19 @@
+<%- include('header') -%>
+
+<div id="delete-item" class="item-delete-update">
+    <form action="" method="POST">
+        <span class="para-error"> <%= err %> </span>
+        <h1> Are You Sure ? </h1>
+        <p> NAME :  <%= item.name %> </p>
+        <p> DESCRIPTION : <%= item.description %> </p>
+        
+        <img src="<%= item.image%>" alt="">
+
+        <label for="password"> Password </label>
+        <input required name="password"  type="text" id="password">
+
+        <button type="submit"> Delete</button>
+    </form>
+</div>
+
+<%- include('footer') -%>

@@ -1,20 +1,14 @@
 <%- include('header') -%>
 
-<h1> does it work ????? </h1>
-
-
-
-
-
-
 <div id="item-detail">
 
     <h1> <%= item.name %> </h1>
     <h3> <%= item.description %> </h3>
+    <h3> <span style="color: rgb(34, 50, 45);"> Manufacturer :</span>  <%= item.category.name %> </h3>
     <img src="<%= item.image%>" alt="">
     <div id="delete-update">
-       <a href="<%= `${results[0].url}/delete` %>" > Delete </a>
-       <a href="<%= `${results[0].url}/Update` %>" > Update </a>
+       <a href="<%= `${item.url}/delete` %>" > Delete </a>
+       <a href="<%= `${item.url}/Update` %>" > Update </a>
     </div>
     </div>
 

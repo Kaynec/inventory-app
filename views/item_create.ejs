@@ -1,0 +1,35 @@
+<%- include('header') -%>
+<div id="create-category">
+
+<form action="" method="POST">
+
+    <h1> Create a Item </h1>
+
+
+
+<% if (errors) { %>
+<% errors.map(err=>{ %>
+    <span class="para-error"> <%= err.msg %> </span>
+<% })%>
+<% }%>
+
+<label for="name"> Name </label>
+<input required name="name" value="<%= item.name %>"  type="text" id="name">
+
+<label for="description"> description </label>
+<textarea required type="text"  name="description" id="description"> <%= item.description%> </textarea>
+<label for="image"> Image Url </label>
+<input required name="image" value="<%=item.image %>"  type="text" id="image">
+
+<label for="select"> Select A Manufacturer</label>
+
+<select name="select" id="select">
+<% categories.map(el=>{ %>
+    <option  value="<%= el._id%>"> <%= el.name%>  </option>
+<% }) %>
+</select>
+
+<button type="submit"> Submit</button>
+</form>
+</div>
+<%- include('footer') -%>

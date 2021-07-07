@@ -26,17 +26,10 @@ router.get("/categories/:id/update", categoryController.category_update_get);
 router.post("/categories/:id/update", categoryController.category_update_post);
 
 router.get("/categories/:id", categoryController.category_detail);
-
-
-
-
-
-
-
-
-
-// 
-// 
+//
+//
+//
+//
 // The items 
 router.get("/items", itemController.item_list);
 // The Get form For a New Category
