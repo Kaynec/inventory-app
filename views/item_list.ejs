@@ -5,14 +5,20 @@
 <div class="wrapper">
     <% items.map(el=>{ %>
         <div class="card">
-        <img src="<%= el.image%>"  class="card-image">
+
+            <img src="<%= el.image%>"  class="card-image">
+
+       <div>
         <h3 class="card-title"> <%= el.name %>  </h3>
         <p class="card-content"><%= el.description%></p>
 
      <div class="category-buttons">
-        <button class="card-btn"><a href="<%= `/categories/${el._id}/update` %>"> update </a> </button>
-        <button class="card-btn"><a href="<%= `/categories/${el._id}/delete` %>"> delete </a> </button>
+        <button class="card-btn"><a href="<%= `/items/${el._id}` %>"> DETAIL </a> </button>
      </div>
+
+       </div>
+
+
     </div>
 
     <% })%>
