@@ -13,9 +13,10 @@ const catalog = require("./routes/catalog");
 
 // Set up mongoose connection
 const mongoose = require("mongoose");
-const dev_db_url =
-  "mongodb+srv://Kaynec:Alireza0910@cluster0.y8q5x.mongodb.net/inventory?retryWrites=true&w=majority";
-const mongoDB = process.env.MONGODB_URI || dev_db_url;
+// const dev_db_url =
+//   "mongodb+srv://Kaynec:Alireza0910@cluster0.y8q5x.mongodb.net/inventory?retryWrites=true&w=majority";
+// const mongoDB = process.env.MONGODB_URI || dev_db_url;
+const mongoDB = process.env.MONGODB_URI
 mongoose.connect(mongoDB, { useNewUrlParser: true, useUnifiedTopology: true });
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
