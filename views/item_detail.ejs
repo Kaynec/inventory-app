@@ -1,15 +1,27 @@
 <%- include('header') -%>
 
-<div id="item-detail">
+<div class="item-detail">
+    <article class="item-inner">
+       <div class="item-img">
+           <img src="<%= item.image%>" width="1500" height="1368" alt="">
+       </div>
+       <div class="item-inner-content">
 
-    <h1> <%= item.name %> </h1>
-    <h3> <%= item.description %> </h3>
-    <h3> <span style="color: rgb(34, 50, 45);"> Manufacturer :</span>  <%= item.category.name %> </h3>
-    <img src="<%= item.image%>" alt="">
-    <div id="delete-update">
-       <a href="<%= `${item.url}/delete` %>" > Delete </a>
-       <a href="<%= `${item.url}/Update` %>" > Update </a>
-    </div>
-    </div>
+           <h1 class="item-inner-title"> <%= item.name %> </h1>
+
+           <h3 class="item-inner-h3"> Manufacturer :   <%= item.category.name  %></h3>
+
+           <p class="item-inner-desc"> <%= item.description %>  </p>
+
+       <div class="item-inner-links">
+        <a href="<%= `/items/${item._id}/delete ` %>"> Delete  <i class="gg-trash-empty"></i> </a>
+        <a href="<%= `/items/${item._id}/update ` %>"> Update <i class="gg-clipboard"></i> </a>
+       </div>
+
+       </div>
+   </article>
+</div>
+
+
 
 <%- include('footer') -%>

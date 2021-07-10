@@ -86,7 +86,7 @@ exports.category_create_post = function(req, res , next) {
    else {
     category.save(function(err){
       if (err) next(err)
-      res.redirect(category.url)
+      res.redirect('/categories')
     })
   }
 }

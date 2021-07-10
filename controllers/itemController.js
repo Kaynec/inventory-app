@@ -45,7 +45,7 @@ exports.item_create_get =async function(req,res,next){
 exports.item_create_post = [
    body('name').trim().isLength({ min: 1 }).escape().withMessage('name must be specified.'),
    body('description').trim().isLength({ min: 1 }).escape().withMessage("description can't be empty. "),
-   body('image').trim().isLength({ min: 1 }).escape().withMessage('image must be specified.').isURL().withMessage('image url must be a valid url'),
+   body('image').trim().isLength({ min: 1 }).withMessage('image must be specified.'),
    body('select.*').escape(),
 
 

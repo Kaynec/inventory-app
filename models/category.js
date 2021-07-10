@@ -10,10 +10,6 @@ const CategorySchema = new Schema({
     type: String,
     required: true,
   },
-  id: {
-    require: true,
-    type: Schema.ObjectId,
-  },
 });
 
 CategorySchema.virtual("url").get(function () {
